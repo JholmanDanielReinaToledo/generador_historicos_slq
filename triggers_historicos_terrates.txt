@@ -1,0 +1,234 @@
+create or replace function sghistorico.historicozona_fisica_predio_funcion() returns trigger as $$
+begin
+  insert into sghistorico.historicozona_fisica_predio(
+    t_id,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgghistoricozona_fisica_predio
+  before update or delete
+  on sg_catastro.zona_fisica_predio
+  for each row
+  execute procedure sghistorico.historicozona_fisica_predio_funcion();
+
+
+
+create or replace function sghistorico.historicozona_geoeconomica_predio_funcion() returns trigger as $$
+begin
+  insert into sghistorico.historicozona_geoeconomica_predio(
+    t_id,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgghistoricozona_geoeconomica_predio
+  before update or delete
+  on sg_catastro.zona_geoeconomica_predio
+  for each row
+  execute procedure sghistorico.historicozona_geoeconomica_predio_funcion();
+
+
+
+create or replace function sghistorico.historicolindero_predio_funcion() returns trigger as $$
+begin
+  insert into sghistorico.historicolindero_predio(
+    t_id,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgghistoricolindero_predio
+  before update or delete
+  on sg_catastro.lindero_predio
+  for each row
+  execute procedure sghistorico.historicolindero_predio_funcion();
+
+
+
+create or replace function sghistorico.historicoav_tablacalificacionconstruccion_funcion() returns trigger as $$
+begin
+  insert into sghistorico.historicoav_tablacalificacionconstruccion(
+    t_id,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgghistoricoav_tablacalificacionconstruccion
+  before update or delete
+  on sg_catastro.av_tablacalificacionconstruccion
+  for each row
+  execute procedure sghistorico.historicoav_tablacalificacionconstruccion_funcion();
+
+
+
+create or replace function sghistorico.historicoav_tipologiaconstruccion_funcion() returns trigger as $$
+begin
+  insert into sghistorico.historicoav_tipologiaconstruccion(
+    t_id,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgghistoricoav_tipologiaconstruccion
+  before update or delete
+  on sg_catastro.av_tipologiaconstruccion
+  for each row
+  execute procedure sghistorico.historicoav_tipologiaconstruccion_funcion();
+
+
+
+create or replace function sghistorico.historicoav_zonahomogeneafisicarural_funcion() returns trigger as $$
+begin
+  insert into sghistorico.historicoav_zonahomogeneafisicarural(
+    t_id,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgghistoricoav_zonahomogeneafisicarural
+  before update or delete
+  on sg_catastro.av_zonahomogeneafisicarural
+  for each row
+  execute procedure sghistorico.historicoav_zonahomogeneafisicarural_funcion();
+
+
+
+create or replace function sghistorico.historicoav_zonahomogeneafisicaurbana_funcion() returns trigger as $$
+begin
+  insert into sghistorico.historicoav_zonahomogeneafisicaurbana(
+    t_id,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgghistoricoav_zonahomogeneafisicaurbana
+  before update or delete
+  on sg_catastro.av_zonahomogeneafisicaurbana
+  for each row
+  execute procedure sghistorico.historicoav_zonahomogeneafisicaurbana_funcion();
+
+
+
+create or replace function sghistorico.historicoav_zonahomogeneageoeconomicarural_funcion() returns trigger as $$
+begin
+  insert into sghistorico.historicoav_zonahomogeneageoeconomicarural(
+    t_id,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgghistoricoav_zonahomogeneageoeconomicarural
+  before update or delete
+  on sg_catastro.av_zonahomogeneageoeconomicarural
+  for each row
+  execute procedure sghistorico.historicoav_zonahomogeneageoeconomicarural_funcion();
+
+
+
+create or replace function sghistorico.historicoav_zonahomogeneageoeconomicaurbana_funcion() returns trigger as $$
+begin
+  insert into sghistorico.historicoav_zonahomogeneageoeconomicaurbana(
+    t_id,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgghistoricoav_zonahomogeneageoeconomicaurbana
+  before update or delete
+  on sg_catastro.av_zonahomogeneageoeconomicaurbana
+  for each row
+  execute procedure sghistorico.historicoav_zonahomogeneageoeconomicaurbana_funcion();
+
+
+

@@ -1,0 +1,46 @@
+create table sisdep_archivo.persona(
+ like sisdep_ventero.persona,
+ operation varchar,
+ CONSTRAINT fk_id_usuario_edita FOREIGN KEY (id_usuario_edita)
+ REFERENCES sisdep_administracion.usuario(id)
+);
+create or replace function sisdep_archivo.tgghistoricopersona_func() returns trigger as $$ begin
+  insert into sisdep_archivo.persona(
+  columnas
+  ) values (
+  old.columas,
+  tg_op
+  );
+   if(tg_op in ('DELETE', 'delete')) then
+       return old;
+   else
+       return new;
+   end if;
+ end;
+$function$;
+
+CREATE TRIGGER historico BEFORE DELETE OR UPDATE ON sisdep_ventero.persona
+   FOR EACH ROW EXECUTE PROCEDURE sisdep_archivo.tgghistoricopersona_func();
+create table sisdep_archivo.ventero(
+ like sisdep_ventero.ventero,
+ operation varchar,
+ CONSTRAINT fk_id_usuario_edita FOREIGN KEY (id_usuario_edita)
+ REFERENCES sisdep_administracion.usuario(id)
+);
+create or replace function sisdep_archivo.tgghistoricoventero_func() returns trigger as $$ begin
+  insert into sisdep_archivo.ventero(
+  columnas
+  ) values (
+  old.columas,
+  tg_op
+  );
+   if(tg_op in ('DELETE', 'delete')) then
+       return old;
+   else
+       return new;
+   end if;
+ end;
+$function$;
+
+CREATE TRIGGER historico BEFORE DELETE OR UPDATE ON sisdep_ventero.ventero
+   FOR EACH ROW EXECUTE PROCEDURE sisdep_archivo.tgghistoricoventero_func();

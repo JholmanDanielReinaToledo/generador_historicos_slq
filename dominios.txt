@@ -1,0 +1,340 @@
+create table sisdep_general.tipo_documento (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.nacionalidad (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.sexo (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_persona (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.estado_civil (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.proteccion_constitucional (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.municipio (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_capacidad_diferencial (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.capacidad_diferencial (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.escolaridad (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.parentesco (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.ocupacion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_ocupacion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_afiliacion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_necesidad (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.actividad_prohibida (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.sitio_prohibido (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_sensibilizacion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_misional (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.jornada (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.procedimiento_anterior (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_miembro_sector_interno (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.persona_atiende (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.clase_venta (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.actividad_economica_tipologia (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tenencia_propiedad (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_modulo (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.estado (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_conexion_servicio (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.cubierta (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.material_amueblamiento (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_oferta (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_visita (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_vehiculo (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.causal_estudio (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.motivo_autorizacion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipologia_original (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_notificacion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_recurso (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.grupo_poblacional (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.grupo_comunitario (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.motivo_labora_espacio_publico (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_pobreza (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.obtencion_propiedad (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_vivienda (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.material_techo (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.material_piso (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.material_pared (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.servicio_publico (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.entidad_jubilacion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.eps (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_cotiza (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.fondo_pension (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.arl (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipologia_familiar (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.ixi_anexo (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.motivo_recuperacion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_infraccion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_solicitud (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_publicidad (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.aviso_publicitario (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_permanencia (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_instalacion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.aviso_publicitario_apro_economico (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.finalidad_valla (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.item_valla (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.indicador_parametro (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.item_elemeto_publicitario (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.elemento_medicion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.resultado_visita_pev (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_evidencia (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.motivo_intervencion_infraestructura (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipologia_transitoria (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.dia_semana (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.resuelve_resolucion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.convenio (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.orientacion (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_modulo_otro (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.nomenclatura_vial (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.entidad_apoyo_operativa (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.programa_o_entidad (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.tipo_conocimiento (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.remision_oferta (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.actividad_operativa (
+    id bigserial primary key,
+    descripcion varchar
+)
+create table sisdep_general.estado_autorizacion (
+    id bigserial primary key,
+    descripcion varchar
+)
