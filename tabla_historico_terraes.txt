@@ -1,5 +1,5 @@
-create table sghistorico.historicozona_fisica_predio(
- like sg_catastro.zona_fisica_predio,
+create table sg_historico.historico_cc_barrio(
+ like sg_catastro.cc_barrio,
  fecha_modificacion timestamptz not null default now(),
  usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
  operacion_ultima_modificacion varchar,
@@ -7,12 +7,12 @@ create table sghistorico.historicozona_fisica_predio(
  resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
  );
 
- create index on sghistorico.historicozona_fisica_predio(usuario_modificacion);
- create index on sghistorico.historicozona_fisica_predio(operacion_ultima_modificacion);
- create index on sghistorico.historicozona_fisica_predio(resolucion_modificante);
+ create index on sg_historico.historico_cc_barrio(usuario_modificacion);
+ create index on sg_historico.historico_cc_barrio(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_barrio(resolucion_modificante);
 
-create table sghistorico.historicozona_geoeconomica_predio(
- like sg_catastro.zona_geoeconomica_predio,
+create table sg_historico.historico_cc_centropoblado(
+ like sg_catastro.cc_centropoblado,
  fecha_modificacion timestamptz not null default now(),
  usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
  operacion_ultima_modificacion varchar,
@@ -20,12 +20,12 @@ create table sghistorico.historicozona_geoeconomica_predio(
  resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
  );
 
- create index on sghistorico.historicozona_geoeconomica_predio(usuario_modificacion);
- create index on sghistorico.historicozona_geoeconomica_predio(operacion_ultima_modificacion);
- create index on sghistorico.historicozona_geoeconomica_predio(resolucion_modificante);
+ create index on sg_historico.historico_cc_centropoblado(usuario_modificacion);
+ create index on sg_historico.historico_cc_centropoblado(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_centropoblado(resolucion_modificante);
 
-create table sghistorico.historicolindero_predio(
- like sg_catastro.lindero_predio,
+create table sg_historico.historico_cc_corregimiento(
+ like sg_catastro.cc_corregimiento,
  fecha_modificacion timestamptz not null default now(),
  usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
  operacion_ultima_modificacion varchar,
@@ -33,12 +33,12 @@ create table sghistorico.historicolindero_predio(
  resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
  );
 
- create index on sghistorico.historicolindero_predio(usuario_modificacion);
- create index on sghistorico.historicolindero_predio(operacion_ultima_modificacion);
- create index on sghistorico.historicolindero_predio(resolucion_modificante);
+ create index on sg_historico.historico_cc_corregimiento(usuario_modificacion);
+ create index on sg_historico.historico_cc_corregimiento(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_corregimiento(resolucion_modificante);
 
-create table sghistorico.historicoav_tablacalificacionconstruccion(
- like sg_catastro.av_tablacalificacionconstruccion,
+create table sg_historico.historico_cc_limitemunicipio(
+ like sg_catastro.cc_limitemunicipio,
  fecha_modificacion timestamptz not null default now(),
  usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
  operacion_ultima_modificacion varchar,
@@ -46,12 +46,12 @@ create table sghistorico.historicoav_tablacalificacionconstruccion(
  resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
  );
 
- create index on sghistorico.historicoav_tablacalificacionconstruccion(usuario_modificacion);
- create index on sghistorico.historicoav_tablacalificacionconstruccion(operacion_ultima_modificacion);
- create index on sghistorico.historicoav_tablacalificacionconstruccion(resolucion_modificante);
+ create index on sg_historico.historico_cc_limitemunicipio(usuario_modificacion);
+ create index on sg_historico.historico_cc_limitemunicipio(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_limitemunicipio(resolucion_modificante);
 
-create table sghistorico.historicoav_tipologiaconstruccion(
- like sg_catastro.av_tipologiaconstruccion,
+create table sg_historico.historico_cc_localidadcomuna(
+ like sg_catastro.cc_localidadcomuna,
  fecha_modificacion timestamptz not null default now(),
  usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
  operacion_ultima_modificacion varchar,
@@ -59,12 +59,12 @@ create table sghistorico.historicoav_tipologiaconstruccion(
  resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
  );
 
- create index on sghistorico.historicoav_tipologiaconstruccion(usuario_modificacion);
- create index on sghistorico.historicoav_tipologiaconstruccion(operacion_ultima_modificacion);
- create index on sghistorico.historicoav_tipologiaconstruccion(resolucion_modificante);
+ create index on sg_historico.historico_cc_localidadcomuna(usuario_modificacion);
+ create index on sg_historico.historico_cc_localidadcomuna(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_localidadcomuna(resolucion_modificante);
 
-create table sghistorico.historicoav_zonahomogeneafisicarural(
- like sg_catastro.av_zonahomogeneafisicarural,
+create table sg_historico.historico_cc_manzana(
+ like sg_catastro.cc_manzana,
  fecha_modificacion timestamptz not null default now(),
  usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
  operacion_ultima_modificacion varchar,
@@ -72,12 +72,12 @@ create table sghistorico.historicoav_zonahomogeneafisicarural(
  resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
  );
 
- create index on sghistorico.historicoav_zonahomogeneafisicarural(usuario_modificacion);
- create index on sghistorico.historicoav_zonahomogeneafisicarural(operacion_ultima_modificacion);
- create index on sghistorico.historicoav_zonahomogeneafisicarural(resolucion_modificante);
+ create index on sg_historico.historico_cc_manzana(usuario_modificacion);
+ create index on sg_historico.historico_cc_manzana(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_manzana(resolucion_modificante);
 
-create table sghistorico.historicoav_zonahomogeneafisicaurbana(
- like sg_catastro.av_zonahomogeneafisicaurbana,
+create table sg_historico.historico_cc_metodooperacion(
+ like sg_catastro.cc_metodooperacion,
  fecha_modificacion timestamptz not null default now(),
  usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
  operacion_ultima_modificacion varchar,
@@ -85,12 +85,12 @@ create table sghistorico.historicoav_zonahomogeneafisicaurbana(
  resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
  );
 
- create index on sghistorico.historicoav_zonahomogeneafisicaurbana(usuario_modificacion);
- create index on sghistorico.historicoav_zonahomogeneafisicaurbana(operacion_ultima_modificacion);
- create index on sghistorico.historicoav_zonahomogeneafisicaurbana(resolucion_modificante);
+ create index on sg_historico.historico_cc_metodooperacion(usuario_modificacion);
+ create index on sg_historico.historico_cc_metodooperacion(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_metodooperacion(resolucion_modificante);
 
-create table sghistorico.historicoav_zonahomogeneageoeconomicarural(
- like sg_catastro.av_zonahomogeneageoeconomicarural,
+create table sg_historico.historico_cc_nomenclaturavial(
+ like sg_catastro.cc_nomenclaturavial,
  fecha_modificacion timestamptz not null default now(),
  usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
  operacion_ultima_modificacion varchar,
@@ -98,12 +98,12 @@ create table sghistorico.historicoav_zonahomogeneageoeconomicarural(
  resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
  );
 
- create index on sghistorico.historicoav_zonahomogeneageoeconomicarural(usuario_modificacion);
- create index on sghistorico.historicoav_zonahomogeneageoeconomicarural(operacion_ultima_modificacion);
- create index on sghistorico.historicoav_zonahomogeneageoeconomicarural(resolucion_modificante);
+ create index on sg_historico.historico_cc_nomenclaturavial(usuario_modificacion);
+ create index on sg_historico.historico_cc_nomenclaturavial(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_nomenclaturavial(resolucion_modificante);
 
-create table sghistorico.historicoav_zonahomogeneageoeconomicaurbana(
- like sg_catastro.av_zonahomogeneageoeconomicaurbana,
+create table sg_historico.historico_cc_nomenclaturavial_tipo_via(
+ like sg_catastro.cc_nomenclaturavial_tipo_via,
  fecha_modificacion timestamptz not null default now(),
  usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
  operacion_ultima_modificacion varchar,
@@ -111,7 +111,59 @@ create table sghistorico.historicoav_zonahomogeneageoeconomicaurbana(
  resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
  );
 
- create index on sghistorico.historicoav_zonahomogeneageoeconomicaurbana(usuario_modificacion);
- create index on sghistorico.historicoav_zonahomogeneageoeconomicaurbana(operacion_ultima_modificacion);
- create index on sghistorico.historicoav_zonahomogeneageoeconomicaurbana(resolucion_modificante);
+ create index on sg_historico.historico_cc_nomenclaturavial_tipo_via(usuario_modificacion);
+ create index on sg_historico.historico_cc_nomenclaturavial_tipo_via(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_nomenclaturavial_tipo_via(resolucion_modificante);
+
+create table sg_historico.historico_cc_perimetrourbano(
+ like sg_catastro.cc_perimetrourbano,
+ fecha_modificacion timestamptz not null default now(),
+ usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
+ operacion_ultima_modificacion varchar,
+ tramite_modificante varchar not null default sg_administracion.current_user_tramite(),
+ resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
+ );
+
+ create index on sg_historico.historico_cc_perimetrourbano(usuario_modificacion);
+ create index on sg_historico.historico_cc_perimetrourbano(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_perimetrourbano(resolucion_modificante);
+
+create table sg_historico.historico_cc_sectorrural(
+ like sg_catastro.cc_sectorrural,
+ fecha_modificacion timestamptz not null default now(),
+ usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
+ operacion_ultima_modificacion varchar,
+ tramite_modificante varchar not null default sg_administracion.current_user_tramite(),
+ resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
+ );
+
+ create index on sg_historico.historico_cc_sectorrural(usuario_modificacion);
+ create index on sg_historico.historico_cc_sectorrural(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_sectorrural(resolucion_modificante);
+
+create table sg_historico.historico_cc_sectorurbano(
+ like sg_catastro.cc_sectorurbano,
+ fecha_modificacion timestamptz not null default now(),
+ usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
+ operacion_ultima_modificacion varchar,
+ tramite_modificante varchar not null default sg_administracion.current_user_tramite(),
+ resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
+ );
+
+ create index on sg_historico.historico_cc_sectorurbano(usuario_modificacion);
+ create index on sg_historico.historico_cc_sectorurbano(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_sectorurbano(resolucion_modificante);
+
+create table sg_historico.historico_cc_vereda(
+ like sg_catastro.cc_vereda,
+ fecha_modificacion timestamptz not null default now(),
+ usuario_modificacion bigint not null default sg_ciudadano.current_user_id() references sg_administracion.usuario(id),
+ operacion_ultima_modificacion varchar,
+ tramite_modificante varchar not null default sg_administracion.current_user_tramite(),
+ resolucion_modificante bigint not null default sg_administracion.current_user_resolucion() references sg_administracion.resolucion(id)
+ );
+
+ create index on sg_historico.historico_cc_vereda(usuario_modificacion);
+ create index on sg_historico.historico_cc_vereda(operacion_ultima_modificacion);
+ create index on sg_historico.historico_cc_vereda(resolucion_modificante);
 

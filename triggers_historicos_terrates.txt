@@ -1,10 +1,20 @@
-create or replace function sghistorico.historicozona_fisica_predio_funcion() returns trigger as $$
+create or replace function sg_historico.historico_cc_barrio_funcion() returns trigger as $$
 begin
-  insert into sghistorico.historicozona_fisica_predio(
+  insert into sg_historico.historico_cc_barrio(
     t_id,
+    t_ili_tid,
+	  codigo,
+	  nombre,
+	  codigo_sector,
+	  geometria,
     operacion_ultima_modificacion
   ) values (
     old.t_id,
+    old.t_ili_tid,
+	  old.codigo,
+	  old.nombre,
+	  old.codigo_sector,
+	  old.geometria,
     tg_op
   );
   if(tg_op in ('DELETE', 'delete')) then
@@ -16,21 +26,30 @@ end;
 $$ language plpgsql strict security definer;
 
 
-create trigger tgghistoricozona_fisica_predio
+create trigger tgg_historico_cc_barrio
   before update or delete
-  on sg_catastro.zona_fisica_predio
+  on sg_catastro.cc_barrio
   for each row
-  execute procedure sghistorico.historicozona_fisica_predio_funcion();
+  execute procedure sg_historico.historico_cc_barrio_funcion();
 
 
-
-create or replace function sghistorico.historicozona_geoeconomica_predio_funcion() returns trigger as $$
+
+
+create or replace function sg_historico.historico_cc_centropoblado_funcion() returns trigger as $$
 begin
-  insert into sghistorico.historicozona_geoeconomica_predio(
+  insert into sg_historico.historico_cc_centropoblado(
     t_id,
+    t_ili_tid,
+	  codigo,
+	  nombre,
+	  geometria,
     operacion_ultima_modificacion
   ) values (
     old.t_id,
+    old.t_ili_tid,
+    old.codigo,
+    old.nombre,
+    old.geometria,
     tg_op
   );
   if(tg_op in ('DELETE', 'delete')) then
@@ -42,21 +61,30 @@ end;
 $$ language plpgsql strict security definer;
 
 
-create trigger tgghistoricozona_geoeconomica_predio
+create trigger tgg_historico_cc_centropoblado
   before update or delete
-  on sg_catastro.zona_geoeconomica_predio
+  on sg_catastro.cc_centropoblado
   for each row
-  execute procedure sghistorico.historicozona_geoeconomica_predio_funcion();
+  execute procedure sg_historico.historico_cc_centropoblado_funcion();
 
 
-
-create or replace function sghistorico.historicolindero_predio_funcion() returns trigger as $$
+
+
+create or replace function sg_historico.historico_cc_corregimiento_funcion() returns trigger as $$
 begin
-  insert into sghistorico.historicolindero_predio(
+  insert into sg_historico.historico_cc_corregimiento(
     t_id,
+    t_ili_tid,
+	  codigo,
+	  nombre,
+	  geometria,
     operacion_ultima_modificacion
   ) values (
     old.t_id,
+    old.t_ili_tid,
+    old.codigo,
+    old.nombre,
+    old.geometria,
     tg_op
   );
   if(tg_op in ('DELETE', 'delete')) then
@@ -68,21 +96,32 @@ end;
 $$ language plpgsql strict security definer;
 
 
-create trigger tgghistoricolindero_predio
+create trigger tgg_historico_cc_corregimiento
   before update or delete
-  on sg_catastro.lindero_predio
+  on sg_catastro.cc_corregimiento
   for each row
-  execute procedure sghistorico.historicolindero_predio_funcion();
+  execute procedure sg_historico.historico_cc_corregimiento_funcion();
 
 
-
-create or replace function sghistorico.historicoav_tablacalificacionconstruccion_funcion() returns trigger as $$
+
+
+create or replace function sg_historico.historico_cc_limitemunicipio_funcion() returns trigger as $$
 begin
-  insert into sghistorico.historicoav_tablacalificacionconstruccion(
+  insert into sg_historico.historico_cc_limitemunicipio(
     t_id,
+    t_ili_tid,
+	  codigo_departamento,
+	  codigo_municipio,
+	  nombre_municipio,
+	  geometria,
     operacion_ultima_modificacion
   ) values (
     old.t_id,
+    old.t_ili_tid,
+    old.codigo_departamento,
+    old.codigo_municipio,
+    old.nombre_municipio,
+    old.geometria,
     tg_op
   );
   if(tg_op in ('DELETE', 'delete')) then
@@ -94,21 +133,30 @@ end;
 $$ language plpgsql strict security definer;
 
 
-create trigger tgghistoricoav_tablacalificacionconstruccion
+create trigger tgg_historico_cc_limitemunicipio
   before update or delete
-  on sg_catastro.av_tablacalificacionconstruccion
+  on sg_catastro.cc_limitemunicipio
   for each row
-  execute procedure sghistorico.historicoav_tablacalificacionconstruccion_funcion();
+  execute procedure sg_historico.historico_cc_limitemunicipio_funcion();
 
 
-
-create or replace function sghistorico.historicoav_tipologiaconstruccion_funcion() returns trigger as $$
+
+
+create or replace function sg_historico.historico_cc_localidadcomuna_funcion() returns trigger as $$
 begin
-  insert into sghistorico.historicoav_tipologiaconstruccion(
+  insert into sg_historico.historico_cc_localidadcomuna(
     t_id,
+    t_ili_tid,
+	  codigo,
+	  nombre,
+	  geometria,
     operacion_ultima_modificacion
   ) values (
     old.t_id,
+    old.t_ili_tid,
+	  old.codigo,
+	  old.nombre,
+	  old.geometria,
     tg_op
   );
   if(tg_op in ('DELETE', 'delete')) then
@@ -120,21 +168,32 @@ end;
 $$ language plpgsql strict security definer;
 
 
-create trigger tgghistoricoav_tipologiaconstruccion
+create trigger tgg_historico_cc_localidadcomuna
   before update or delete
-  on sg_catastro.av_tipologiaconstruccion
+  on sg_catastro.cc_localidadcomuna
   for each row
-  execute procedure sghistorico.historicoav_tipologiaconstruccion_funcion();
+  execute procedure sg_historico.historico_cc_localidadcomuna_funcion();
 
 
-
-create or replace function sghistorico.historicoav_zonahomogeneafisicarural_funcion() returns trigger as $$
+
+
+create or replace function sg_historico.historico_cc_manzana_funcion() returns trigger as $$
 begin
-  insert into sghistorico.historicoav_zonahomogeneafisicarural(
+  insert into sg_historico.historico_cc_manzana(
     t_id,
+	  t_ili_tid,
+	  codigo,
+	  codigo_barrio,
+	  nombre,
+	  geometria,
     operacion_ultima_modificacion
   ) values (
     old.t_id,
+	  old.t_ili_tid,
+	  old.codigo,
+	  old.codigo_barrio,
+	  old.nombre,
+	  old.geometria,
     tg_op
   );
   if(tg_op in ('DELETE', 'delete')) then
@@ -146,21 +205,34 @@ end;
 $$ language plpgsql strict security definer;
 
 
-create trigger tgghistoricoav_zonahomogeneafisicarural
+create trigger tgg_historico_cc_manzana
   before update or delete
-  on sg_catastro.av_zonahomogeneafisicarural
+  on sg_catastro.cc_manzana
   for each row
-  execute procedure sghistorico.historicoav_zonahomogeneafisicarural_funcion();
+  execute procedure sg_historico.historico_cc_manzana_funcion();
 
 
-
-create or replace function sghistorico.historicoav_zonahomogeneafisicaurbana_funcion() returns trigger as $$
+
+
+create or replace function sg_historico.historico_cc_metodooperacion_funcion() returns trigger as $$
 begin
-  insert into sghistorico.historicoav_zonahomogeneafisicaurbana(
+  insert into sg_historico.historico_cc_metodooperacion(
     t_id,
+    t_ili_tid,
+	  t_seq,
+	  formula,
+	  dimensiones_origen,
+	  dimensiones_objetivo,
+	  col_transformacion_transformacion,
     operacion_ultima_modificacion
   ) values (
     old.t_id,
+    old.t_ili_tid,
+	  old.t_seq,
+	  old.formula,
+	  old.dimensiones_origen,
+	  old.dimensiones_objetivo,
+	  old.col_transformacion_transformacion,
     tg_op
   );
   if(tg_op in ('DELETE', 'delete')) then
@@ -172,21 +244,30 @@ end;
 $$ language plpgsql strict security definer;
 
 
-create trigger tgghistoricoav_zonahomogeneafisicaurbana
+create trigger tgg_historico_cc_metodooperacion
   before update or delete
-  on sg_catastro.av_zonahomogeneafisicaurbana
+  on sg_catastro.cc_metodooperacion
   for each row
-  execute procedure sghistorico.historicoav_zonahomogeneafisicaurbana_funcion();
+  execute procedure sg_historico.historico_cc_metodooperacion_funcion();
 
 
-
-create or replace function sghistorico.historicoav_zonahomogeneageoeconomicarural_funcion() returns trigger as $$
+
+
+create or replace function sg_historico.historico_cc_nomenclaturavial_funcion() returns trigger as $$
 begin
-  insert into sghistorico.historicoav_zonahomogeneageoeconomicarural(
+  insert into sg_historico.historico_cc_nomenclaturavial(
     t_id,
+    t_ili_tid,
+	  tipo_via,
+	  numero_via,
+	  geometria,
     operacion_ultima_modificacion
   ) values (
     old.t_id,
+    old.t_ili_tid,
+	  old.tipo_via,
+	  old.numero_via,
+	  old.geometria,
     tg_op
   );
   if(tg_op in ('DELETE', 'delete')) then
@@ -198,21 +279,38 @@ end;
 $$ language plpgsql strict security definer;
 
 
-create trigger tgghistoricoav_zonahomogeneageoeconomicarural
+create trigger tgg_historico_cc_nomenclaturavial
   before update or delete
-  on sg_catastro.av_zonahomogeneageoeconomicarural
+  on sg_catastro.cc_nomenclaturavial
   for each row
-  execute procedure sghistorico.historicoav_zonahomogeneageoeconomicarural_funcion();
+  execute procedure sg_historico.historico_cc_nomenclaturavial_funcion();
 
 
-
-create or replace function sghistorico.historicoav_zonahomogeneageoeconomicaurbana_funcion() returns trigger as $$
+
+
+create or replace function sg_historico.historico_cc_nomenclaturavial_tipo_via_funcion() returns trigger as $$
 begin
-  insert into sghistorico.historicoav_zonahomogeneageoeconomicaurbana(
+  insert into sg_historico.historico_cc_nomenclaturavial_tipo_via(
     t_id,
+    thisclass,
+	  baseclass,
+	  itfcode,
+	  ilicode,
+	  seq,
+	  inactive,
+	  dispname,
+	  description,
     operacion_ultima_modificacion
   ) values (
     old.t_id,
+    old.thisclass,
+	  old.baseclass,
+	  old.itfcode,
+	  old.ilicode,
+	  old.seq,
+	  old.inactive,
+	  old.dispname,
+	  old.description,
     tg_op
   );
   if(tg_op in ('DELETE', 'delete')) then
@@ -224,11 +322,156 @@ end;
 $$ language plpgsql strict security definer;
 
 
-create trigger tgghistoricoav_zonahomogeneageoeconomicaurbana
+create trigger tgg_historico_cc_nomenclaturavial_tipo_via
   before update or delete
-  on sg_catastro.av_zonahomogeneageoeconomicaurbana
+  on sg_catastro.cc_nomenclaturavial_tipo_via
   for each row
-  execute procedure sghistorico.historicoav_zonahomogeneageoeconomicaurbana_funcion();
+  execute procedure sg_historico.historico_cc_nomenclaturavial_tipo_via_funcion();
 
 
-
+
+
+create or replace function sg_historico.historico_cc_perimetrourbano_funcion() returns trigger as $$
+begin
+  insert into sg_historico.historico_cc_perimetrourbano(
+    t_id,
+    t_ili_tid,
+	  codigo_departamento,
+	  codigo_municipio,
+	  tipo_avaluo,
+	  nombre_geografico,
+	  codigo_nombre,
+	  geometria,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    old.t_ili_tid,
+	  old.codigo_departamento,
+	  old.codigo_municipio,
+	  old.tipo_avaluo,
+	  old.nombre_geografico,
+	  old.codigo_nombre,
+	  old.geometria,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgg_historico_cc_perimetrourbano
+  before update or delete
+  on sg_catastro.cc_perimetrourbano
+  for each row
+  execute procedure sg_historico.historico_cc_perimetrourbano_funcion();
+
+
+
+
+create or replace function sg_historico.historico_cc_sectorrural_funcion() returns trigger as $$
+begin
+  insert into sg_historico.historico_cc_sectorrural(
+    t_id,
+    t_ili_tid,
+	  codigo,
+	  geometria,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    old.t_ili_tid,
+	  old.codigo,
+	  old.geometria,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgg_historico_cc_sectorrural
+  before update or delete
+  on sg_catastro.cc_sectorrural
+  for each row
+  execute procedure sg_historico.historico_cc_sectorrural_funcion();
+
+
+
+
+create or replace function sg_historico.historico_cc_sectorurbano_funcion() returns trigger as $$
+begin
+  insert into sg_historico.historico_cc_sectorurbano(
+    t_id,
+    t_ili_tid,
+	  codigo,
+	  geometria,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    old.t_ili_tid,
+	  old.codigo,
+	  old.geometria,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgg_historico_cc_sectorurbano
+  before update or delete
+  on sg_catastro.cc_sectorurbano
+  for each row
+  execute procedure sg_historico.historico_cc_sectorurbano_funcion();
+
+
+
+
+create or replace function sg_historico.historico_cc_vereda_funcion() returns trigger as $$
+begin
+  insert into sg_historico.historico_cc_vereda(
+    t_id,
+    t_ili_tid,
+	  codigo,
+	  nombre,
+	  codigo_sector,
+	  geometria,
+    operacion_ultima_modificacion
+  ) values (
+    old.t_id,
+    old.t_ili_tid,
+	  old.codigo,
+	  old.nombre,
+	  old.codigo_sector,
+	  old.geometria,
+    tg_op
+  );
+  if(tg_op in ('DELETE', 'delete')) then
+     return old;
+     else
+        return new;
+     end if;
+end;
+$$ language plpgsql strict security definer;
+
+
+create trigger tgg_historico_cc_vereda
+  before update or delete
+  on sg_catastro.cc_vereda
+  for each row
+  execute procedure sg_historico.historico_cc_vereda_funcion();
+
+
+
+
